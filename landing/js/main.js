@@ -41,10 +41,11 @@
     new IntersectionObserver(([e]) => { finalIn = e.isIntersecting; update(); }, { threshold: 0.3 }).observe(finalSection);
   }
 
-  // Hero video: still frame for reduced motion or metered/slow connections; otherwise play only while on screen
+  // Hero video: still frame for reduced motion, Data Saver or 2G; otherwise play only while on screen.
+  // '3g' is left out on purpose: Chrome estimates it from RTT and reports it on ordinary broadband far from the server.
   const video = document.querySelector('.hero__video');
   const conn = navigator.connection;
-  const slowNetwork = Boolean(conn && (conn.saveData || ['slow-2g', '2g', '3g'].includes(conn.effectiveType)));
+  const slowNetwork = Boolean(conn && (conn.saveData || ['slow-2g', '2g'].includes(conn.effectiveType)));
   if (video && slowNetwork) {
     video.removeAttribute('autoplay');
     video.querySelectorAll('source').forEach((s) => s.remove());
