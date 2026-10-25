@@ -1,0 +1,32 @@
+/* =========================================================================
+   Gama 960+ · mobile.css (v3): provisional stacking for < 960px.
+   The mobile design is done after the desktop model is approved.
+   ========================================================================= */
+
+:root { --gutter: 20px; --header-h: 64px; }
+
+.site-nav { display: none; }
+.site-header__cta { display: none; }
+.nav-toggle { display: none; }
+
+.story__grid { display: flex; flex-direction: column; }
+.stage { display: flex; flex-direction: column; gap: 18px; padding: 56px 0; }
+.stage--hero { padding-top: calc(var(--header-h) + 40px); }
+.sheet-wrap { height: auto; margin: 0 0 56px; }
+.sheet { height: auto; width: 100%; transform: none; }
+.sheet__body { min-height: 440px; }
+
+.split__half { padding: 64px 0; }
+.split__inner { display: flex; flex-direction: column; gap: 18px; padding-inline: var(--gutter); }
+.split__inner .btn { align-self: flex-start; }
+
+.plans, .faq { padding-block: 72px; }
+.plans__head { display: flex; flex-direction: column; gap: 14px; }
+.plans__grid { display: grid; gap: 20px; margin-top: 32px; }
+.plans__pay, .enter { margin-top: 28px; }
+.faq__head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.faq__honest { margin-top: 24px; }
+
+.final { padding-top: 80px; }
+.final__inner { display: flex; flex-direction: column; align-items: center; gap: 22px; padding-bottom: 64px; }
+.final__inner .btn { white-space: normal; text-align: center; }

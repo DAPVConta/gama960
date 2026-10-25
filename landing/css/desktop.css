@@ -1,0 +1,71 @@
+/* =========================================================================
+   Gama 960+ · desktop.css (v4): layout for viewports >= 960px
+   ========================================================================= */
+
+:root { --gutter: 40px; --section-y: clamp(88px, 8vw, 128px); }
+@media (min-width: 1440px) { :root { --gutter: 64px; } }
+
+.site-header__cta { margin-left: 8px; }
+@media (max-width: 1199.98px) { .brand__name { display: none; } .site-nav { gap: 18px; } }
+
+.section { padding-block: var(--section-y); }
+.section-head { margin-bottom: clamp(40px, 4vw, 56px); }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: calc(var(--header-h) + 4vh); }
+.hero__grid { display: flex; align-items: center; min-height: calc(100vh - var(--header-h) - 4vh); min-height: calc(100dvh - var(--header-h) - 4vh); }
+.hero__content { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 24px; max-width: 50%; padding-bottom: clamp(96px, 12vh, 140px); }
+.hero__content .lead { margin-top: -4px; max-width: 28em; }
+.hero .stats { margin-top: -56px; margin-bottom: -72px; }
+@media (max-width: 1199.98px) { .hero__content { max-width: 56%; } .hero__visual { width: 52%; } }
+.hero { padding-bottom: 72px; }
+.who { padding-top: calc(var(--section-y) + 72px); }
+
+/* ---------- Who ---------- */
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+/* ---------- Problem ---------- */
+.problem__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+
+/* ---------- Method ---------- */
+.steps { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.steps::before { content: ""; position: absolute; left: 6%; right: 6%; top: 58px; height: 1.5px; background: linear-gradient(90deg, transparent, var(--gold) 12%, var(--gold) 88%, transparent); z-index: -1; }
+.support { margin-top: 36px; }
+
+/* ---------- Corrections ---------- */
+.corrections__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(40px, 6vw, 96px); align-items: center; }
+.corrections__content { display: flex; flex-direction: column; gap: 22px; }
+.corrections__content .features { display: grid; gap: 22px; margin-top: 8px; }
+.corrections__media { margin-inline: 8% 4%; }
+
+/* ---------- Repertoire ---------- */
+.repertoire { overflow: clip; }
+
+/* ---------- Split ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; }
+.split__half { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 68vh; padding: clamp(72px, 8vw, 112px) clamp(40px, 6vw, 96px); }
+.split__half--white { justify-content: flex-end; }
+.split__inner { display: flex; flex-direction: column; gap: 20px; max-width: 520px; width: 100%; }
+.split__inner .btn { align-self: flex-start; margin-top: 6px; }
+
+/* ---------- Professor ---------- */
+.professor__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(48px, 7vw, 112px); align-items: center; }
+.professor__media { margin-right: 24px; }
+.professor__content { display: flex; flex-direction: column; gap: 18px; }
+.professor__content .features { display: grid; gap: 18px; margin-top: 10px; padding-top: 24px; border-top: 1px solid var(--gray); }
+
+/* ---------- Plans ---------- */
+.plans__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 460px)); justify-content: center; gap: 28px; margin-top: 32px; align-items: stretch; }
+.plan--featured { translate: 0 -14px; }
+.pay { margin-top: 40px; }
+.plans .enter { margin-top: 44px; }
+.plans__rule { margin-top: 20px; }
+
+/* ---------- FAQ ---------- */
+.faq__grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; }
+.faq__honest { justify-content: center; margin-top: 36px; }
+
+/* ---------- Final ---------- */
+.final__inner { display: flex; flex-direction: column; align-items: center; gap: 24px; max-width: 820px; }
+.final__title { max-width: 16ch; }
+.final__inner .btn { margin-top: 8px; }

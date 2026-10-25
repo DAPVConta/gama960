@@ -1,0 +1,80 @@
+/* =========================================================================
+   Gama 960+ · desktop.css (v3): layout for viewports >= 960px
+   ========================================================================= */
+
+:root { --gutter: 40px; }
+@media (min-width: 1440px) { :root { --gutter: 64px; } }
+
+/* The header mirrors the story grid: brand + nav on the white column, CTA over the navy mat */
+.site-header__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(480px, 44vw, 680px);
+  padding-left: max(var(--gutter), calc((100vw - var(--container)) / 2));
+}
+.site-header__cta { justify-self: end; }
+@media (max-width: 1199.98px) { .brand__name { display: none; } .site-nav { gap: 22px; } }
+
+/* ---------- Story: white scrolling column + navy mat with the sticky sheet ---------- */
+.story__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(480px, 44vw, 680px);
+  align-items: stretch;
+}
+.story__flow {
+  display: flex; flex-direction: column;
+  padding-left: max(var(--gutter), calc((100vw - var(--container)) / 2));
+  padding-right: clamp(40px, 5vw, 88px);
+  padding-bottom: 14vh; /* keeps the sheet pinned while the last stage is centered */
+}
+.stage {
+  display: flex; flex-direction: column; justify-content: center; gap: 22px;
+  min-height: 82vh;
+  min-height: 82dvh;
+  padding-block: 10vh;
+  max-width: 560px;
+}
+.stage--hero { min-height: 100vh; min-height: 100dvh; padding-top: calc(var(--header-h) + 6vh); padding-bottom: 8vh; gap: 24px; }
+.stage--hero .creds { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 14px; padding-top: 22px; border-top: 1px solid var(--gray); }
+.stage .lead { margin-top: -4px; }
+.stage .note { margin-top: -6px; }
+
+.story__mat { padding-inline: clamp(32px, 3.5vw, 56px); }
+.sheet-wrap {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: var(--header-h);
+  padding-bottom: 36px;
+}
+.sheet { height: calc(100% - 20px); }
+
+/* ---------- Split ---------- */
+.split { display: grid; grid-template-columns: 1fr 1fr; }
+.split__half { display: flex; align-items: center; min-height: 70vh; padding: clamp(64px, 8vw, 112px) clamp(40px, 6vw, 96px); }
+.split__half--paper { justify-content: flex-end; }
+.split__inner { display: flex; flex-direction: column; gap: 22px; max-width: 520px; width: 100%; }
+.split__inner .checks { margin-top: 2px; }
+.split__inner .btn { align-self: flex-start; margin-top: 4px; }
+
+/* ---------- Plans ---------- */
+.plans { padding-block: clamp(96px, 10vw, 140px); }
+.plans__head { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; max-width: 760px; margin-inline: auto; }
+.plans__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 440px)); justify-content: center; gap: 28px; margin-top: 48px; align-items: stretch; }
+.plan--featured { translate: 0 -12px; }
+.plans__pay { margin-top: 36px; }
+.plans .enter { margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--gray); }
+.plans__rule { margin-top: 16px; }
+
+/* ---------- FAQ ---------- */
+.faq { padding-block: clamp(80px, 9vw, 120px); }
+.faq__head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+.faq__grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; }
+.faq__honest { margin-top: 36px; max-width: 64ch; }
+
+/* ---------- Final ---------- */
+.final { padding-top: clamp(96px, 11vw, 150px); }
+.final__inner { display: flex; flex-direction: column; align-items: center; gap: 26px; padding-bottom: clamp(80px, 9vw, 120px); }
+.final__title { max-width: 14ch; }
+.final__inner .btn { margin-top: 8px; }

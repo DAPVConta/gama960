@@ -1,0 +1,12 @@
+# Originais e materiais de referência (fora do site)
+/*.jpg
+/*.jpeg
+/*.png
+/*.pdf
+
+# Sistema / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+__pycache__/
+.claude/settings.local.json
